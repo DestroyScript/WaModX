@@ -58,9 +58,9 @@
 <img src="./assets/icons/check-done.svg" width="18" alt="done"> <b>Blue Ticks After Reply</b><br>
 <img src="./assets/icons/check-done.svg" width="18" alt="done"> <b>Hide Typing / Recording Audio</b><br>
 <img src="./assets/icons/check-done.svg" width="18" alt="done"> <b>Download Status / Copy Status Text</b><br>
+<img src="./assets/icons/check-done.svg" width="18" alt="done"> <b>Fix SMS</b><br>
+<img src="./assets/icons/check-orange.svg" width="18" alt="partial"> <b>Bypass Anti Ban</b><br>
 <img src="./assets/icons/check-pending.svg" width="18" alt="pending"> <b>Anti View Once</b><br>
-<img src="./assets/icons/check-pending.svg" width="18" alt="pending"> <b>Bypass Anti Ban</b><br>
-<img src="./assets/icons/check-pending.svg" width="18" alt="pending"> <b>Fix SMS</b><br>
 <img src="./assets/icons/check-pending.svg" width="18" alt="pending"> <b>Design Mods</b>
 </p>
 
@@ -84,7 +84,8 @@
 <img src="./assets/icons/undo.svg" width="16" alt=""> <b>Anti Revoke Messages</b> → <code>LX/1DU.A00</code>, <code>LX/BOY.getDateView</code><br>
 <img src="./assets/icons/mic.svg" width="16" alt=""> <b>Hide Typing / Recording</b> → <code>LX/1im.CCQ</code>, <code>LX/6nE.A01</code><br>
 <img src="./assets/icons/status.svg" width="16" alt=""> <b>Status Actions</b> → <code>StatusPlaybackContactFragment.A0K</code><br>
-<img src="./assets/icons/sliders.svg" width="16" alt=""> <b>Settings Entry</b> → <code>SettingsTabActivity.onResume</code>
+<img src="./assets/icons/sliders.svg" width="16" alt=""> <b>Settings Entry</b> → <code>SettingsTabActivity.onResume</code><br>
+<img src="./assets/icons/android.svg" width="16" alt=""> <b>Fix SMS / Bypass Anti Ban</b> → <code>LX/1Nw.A08</code>, <code>LX/02X.A00</code>, <code>GooglePlayServicesUtil.A01</code>, <code>LX/H4u.A00</code>, <code>LX/00L.A01</code>, <code>LX/HfK.A01</code>
 </p>
 
 <br>
