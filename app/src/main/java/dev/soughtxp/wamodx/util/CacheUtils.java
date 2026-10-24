@@ -18,7 +18,7 @@ public final class CacheUtils {
     private CacheUtils() {
     }
 
-    // Pastas de cache em Android/media/{package}/{appName}/
+    // Cache paths in Android/media/{package}/{appName}/
     private static final String[] EXTERNAL_CACHE_SUBPATHS = {
             ".Shared",
             ".trash",
@@ -32,7 +32,7 @@ public final class CacheUtils {
             "Databases"
     };
 
-    // Pastas de mídia em Android/media/{package}/{appName}/Media/
+    // Media paths in Android/media/{package}/{appName}/Media/
     private static final String[] MEDIA_SUBPATHS = {
             "%s Images",
             "%s Images/Sent",
@@ -61,7 +61,7 @@ public final class CacheUtils {
             "%s Bug Report Attachments"
     };
 
-    // Pastas internas em /data/data/{package}/
+    // Internal paths in /data/data/{package}/
     private static final String[] INTERNAL_CACHE_PATHS = {
             "files/decompressed",
             "files/stickers_cache",
@@ -100,7 +100,7 @@ public final class CacheUtils {
             return dirs;
         }
         
-        // Cache padrão do Android
+        // Android path cache default
         File cacheDir = appContext.getCacheDir();
         if (cacheDir != null && cacheDir.exists()) {
             dirs.add(cacheDir);
@@ -112,7 +112,7 @@ public final class CacheUtils {
             dirs.add(codeCacheDir);
         }
 
-        // Cache externo
+        // External cache
         File externalCacheDir = appContext.getExternalCacheDir();
         if (externalCacheDir != null && externalCacheDir.exists()) {
             dirs.add(externalCacheDir);
@@ -125,7 +125,7 @@ public final class CacheUtils {
         File externalMedia = new File(Environment.getExternalStorageDirectory(),
                 "Android/media/" + packageName + "/" + appName);
 
-        // Pastas de cache externas
+        // External cache paths
         for (String subpath : EXTERNAL_CACHE_SUBPATHS) {
             File dir = new File(externalMedia, subpath);
             if (dir.exists()) {
@@ -133,7 +133,7 @@ public final class CacheUtils {
             }
         }
 
-        // Pastas de mídia em Media/
+        // Media paths in Media/
         File mediaFolder = new File(externalMedia, "Media");
         for (String subpath : MEDIA_SUBPATHS) {
             String path = subpath.contains("%s") ? String.format(subpath, appName) : subpath;
@@ -143,7 +143,7 @@ public final class CacheUtils {
             }
         }
 
-        // Pastas internas
+        // Internal paths
         File dataDir = appContext.getDataDir();
         if (dataDir != null) {
             for (String path : INTERNAL_CACHE_PATHS) {
