@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Base activity that WhatsApp's own activities extend.
- * SecretActivity extends it to blend into the app.
+ * SettingsActivity extends it to blend into the app.
  * 
  * Real class: {@code LX/0I0}
  */

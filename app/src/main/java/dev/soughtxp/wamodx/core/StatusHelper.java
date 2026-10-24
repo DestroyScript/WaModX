@@ -49,10 +49,10 @@ public class StatusHelper {
         Object service = context.getSystemService(Context.CLIPBOARD_SERVICE);
         if (service instanceof ClipboardManager) {
             ClipboardManager clipboard = (ClipboardManager) service;
-            String label = ResUtils.STRING.get("status_text_label");
+            String label = ResUtils.STRING.get("wamodx_status_label");
             String clipText = label + text;
             clipboard.setPrimaryClip(ClipData.newPlainText(label, clipText));
-            String msg = ResUtils.STRING.get("text_copied");
+            String msg = ResUtils.STRING.get("wamodx_text_copied");
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
         }
     }
@@ -86,24 +86,24 @@ public class StatusHelper {
 
     public static void downloadMedia(Object obj) {
         if (obj == null) {
-            toast((String) ResUtils.STRING.get("error_status_null"));
+            toast((String) ResUtils.STRING.get("wamodx_err_status_null"));
             return;
         }
 
         File source = resolveMediaFile(obj);
         if (source == null) {
-            toast((String) ResUtils.STRING.get("error_resolve_media"));
+            toast((String) ResUtils.STRING.get("wamodx_err_resolve_media"));
             return;
         }
 
         if (!source.exists()) {
-            toast(String.format((String) ResUtils.STRING.get("error_source_not_found"), source.getAbsolutePath()));
+            toast(String.format((String) ResUtils.STRING.get("wamodx_err_source_missing"), source.getAbsolutePath()));
             return;
         }
 
         Context context = App.getContext();
         if (context == null) {
-            toast((String) ResUtils.STRING.get("error_no_context"));
+            toast((String) ResUtils.STRING.get("wamodx_err_no_context"));
             return;
         }
 
@@ -121,9 +121,9 @@ public class StatusHelper {
 
         File dest = new File(destDir, source.getName());
         if (copyFile(source, dest)) {
-            toast(String.format((String) ResUtils.STRING.get("saved_to"), dest.getAbsolutePath()));
+            toast(String.format((String) ResUtils.STRING.get("wamodx_saved_to"), dest.getAbsolutePath()));
         } else {
-            toast((String) ResUtils.STRING.get("error_copy_failed"));
+            toast((String) ResUtils.STRING.get("wamodx_err_copy_failed"));
         }
     }
 
@@ -216,7 +216,7 @@ public class StatusHelper {
     public static void markStatusAsSeen(Object statusObject) {
         try {
             if (ReadReceiptPrivacy.sendStatusReceipt(statusObject)) {
-                toast((String) ResUtils.STRING.get("status_marked_seen"));
+                toast((String) ResUtils.STRING.get("wamodx_status_seen"));
             }
         } catch (Throwable t) {
         }

@@ -17,7 +17,7 @@ import com.whatsapp.ui.wds.components.toggle.WDSSwitch;
 
 import X.BaseActivity;
 
-public class SecretActivity extends BaseActivity {
+public class SettingsActivity extends BaseActivity {
 
     private static final String KEY_CONTACTS = "contacts_privacy";
     private static final String KEY_GROUPS = "groups_privacy";
@@ -41,7 +41,7 @@ public class SecretActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(ResUtils.STRING.get("title"));
+        setTitle(ResUtils.STRING.get("wamodx_settings_title"));
         setupToolbar();
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -106,7 +106,7 @@ public class SecretActivity extends BaseActivity {
         githubItem = findViewById(ResUtils.ID.get("github_item"));
         if (githubItem != null) {
             if (githubItem.getItemSubTextView() != null) {
-                githubItem.getItemSubTextView().setText(ResUtils.STRING.get("github_subtitle"));
+                githubItem.getItemSubTextView().setText(ResUtils.STRING.get("wamodx_gh_subtitle"));
             }
             githubItem.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -155,29 +155,29 @@ public class SecretActivity extends BaseActivity {
 
     private void showClearCacheConfirmation() {
         if (cachedCacheSize == null || cachedCacheSize.equals("0 B")) {
-            Toast.makeText(this, ResUtils.STRING.get("clear_cache_nothing"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, ResUtils.STRING.get("wamodx_cache_empty"), Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String message = ResUtils.STRING.get("clear_cache_confirm_message");
+        String message = ResUtils.STRING.get("wamodx_cache_confirm_msg");
         message = message.replace("%s", cachedCacheSize);
 
         new AlertDialog.Builder(this)
-                .setTitle(ResUtils.STRING.get("clear_cache_confirm_title"))
+                .setTitle(ResUtils.STRING.get("wamodx_cache_confirm_title"))
                 .setMessage(message)
-                .setPositiveButton(ResUtils.STRING.get("clear_cache_confirm_yes"), new DialogInterface.OnClickListener() {
+                .setPositiveButton(ResUtils.STRING.get("wamodx_cache_confirm_yes"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         clearCache();
                     }
                 })
-                .setNegativeButton(ResUtils.STRING.get("clear_cache_confirm_no"), null)
+                .setNegativeButton(ResUtils.STRING.get("wamodx_cache_confirm_no"), null)
                 .show();
     }
 
     private void clearCache() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle(ResUtils.STRING.get("clear_cache_dialog_title"));
+        progressDialog.setTitle(ResUtils.STRING.get("wamodx_cache_clearing"));
         progressDialog.setCancelable(false);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setMax(100);
@@ -192,9 +192,9 @@ public class SecretActivity extends BaseActivity {
             @Override
             public void onClearComplete(boolean success) {
                 if (success) {
-                    Toast.makeText(SecretActivity.this, ResUtils.STRING.get("clear_cache_complete"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SettingsActivity.this, ResUtils.STRING.get("wamodx_cache_cleared"), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SecretActivity.this, ResUtils.STRING.get("clear_cache_error"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SettingsActivity.this, ResUtils.STRING.get("wamodx_cache_error"), Toast.LENGTH_SHORT).show();
                 }
                 updateCacheSizeSubtitle();
             }
@@ -204,9 +204,9 @@ public class SecretActivity extends BaseActivity {
     private String[] getPrivacyOptions() {
         if (privacyOptions == null) {
             privacyOptions = new String[]{
-                    ResUtils.STRING.get("privacy_option_normal"),
-                    ResUtils.STRING.get("privacy_option_hide_ticks"),
-                    ResUtils.STRING.get("privacy_option_show_after_reply")
+                    ResUtils.STRING.get("wamodx_privacy_normal"),
+                    ResUtils.STRING.get("wamodx_privacy_hide_ticks"),
+                    ResUtils.STRING.get("wamodx_privacy_reply_ticks")
             };
         }
         return privacyOptions;
@@ -217,8 +217,8 @@ public class SecretActivity extends BaseActivity {
         int currentValue = PrefsUtils.PREFERENCES.getInt(key, PRIVACY_NORMAL);
 
         String title = isContacts
-                ? ResUtils.STRING.get("contacts_privacy_title")
-                : ResUtils.STRING.get("groups_privacy_title");
+                ? ResUtils.STRING.get("wamodx_contacts_title")
+                : ResUtils.STRING.get("wamodx_groups_title");
 
         new AlertDialog.Builder(this)
                 .setTitle(title)
