@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import dev.soughtxp.wamodx.App;
-import dev.soughtxp.wamodx.ui.SecretActivity;
+import dev.soughtxp.wamodx.ui.SettingsActivity;
 import dev.soughtxp.wamodx.util.ResUtils;
 
 public class SettingsHook {
@@ -56,7 +56,7 @@ public class SettingsHook {
         try {
             android.content.Context context = App.getContext();
             if (context == null) return;
-            Intent intent = new Intent(context, SecretActivity.class);
+            Intent intent = new Intent(context, SettingsActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } catch (Exception e) {
