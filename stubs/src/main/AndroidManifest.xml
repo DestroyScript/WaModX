@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Compile-only stubs module. It is never packaged into the APK, so it
+    declares no application components. The package attribute matches the
+    module namespace in build.gradle.kts; the stub classes keep their own
+    `X` / `com.whatsapp.*` packages.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.soughtxp.wamodx.stubs" />
