@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="bypass anti ban">
+  <rect x="4.5" y="10.5" width="15" height="10" rx="2.4" fill="#25D366"/>
+  <path d="M7.5 10.5V8a4.5 4.5 0 019 0v2.5" fill="none" stroke="#25D366" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="12" cy="15" r="1.6" fill="#ffffff"/>
+  <path d="M12 15.6v2.2" stroke="#25D366" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
